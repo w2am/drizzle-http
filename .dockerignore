@@ -1,0 +1,8 @@
+.git
+.idea
+.ignore
+node_modules
+.dockerignore
+*.md
+*.log
+tmp

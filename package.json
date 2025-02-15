@@ -1,0 +1,39 @@
+{
+  "name": "drizzle-http",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "clean": "git clean -xdf node_modules dist",
+    "dev": "pnpm with-env tsx --watch src/server.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "pnpm typecheck && eslint",
+    "publish": "pnpm lint && pnpm format:check && pnpm build && changeset publish",
+    "start": "pnpm with-env node dist/server.js",
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "with-env": "dotenv -e .env --"
+  },
+  "prettier": "@shahrad/prettier-config",
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "hono": "^4.7.1",
+    "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.12",
+    "@shahrad/eslint-config": "^1.0.0",
+    "@shahrad/prettier-config": "^1.1.0",
+    "@sindresorhus/tsconfig": "^7.0.0",
+    "@types/node": "^22.13.4",
+    "@types/pg": "^8.11.11",
+    "dotenv-cli": "^8.0.0",
+    "esbuild-shim-plugin": "^1.0.1",
+    "eslint": "^9.20.1",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.1",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  },
+  "packageManager": "pnpm@9.15.5+sha512.845196026aab1cc3f098a0474b64dfbab2afe7a1b4e91dd86895d8e4aa32a7a6d03049e2d0ad770bbe4de023a7122fb68c1a1d6e0d033c7076085f9d5d4800d4"
+}
