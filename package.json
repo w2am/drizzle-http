@@ -4,12 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "tsup",
+    "release": "pnpm lint && pnpm format:check && pnpm build && changeset publish",
     "clean": "git clean -xdf node_modules dist",
     "dev": "pnpm with-env tsx --watch src/server.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "pnpm typecheck && eslint",
-    "publish": "pnpm lint && pnpm format:check && pnpm build && changeset publish",
     "start": "pnpm with-env node dist/server.js",
     "typecheck": "tsc --noEmit --skipLibCheck",
     "with-env": "dotenv -e .env --"
